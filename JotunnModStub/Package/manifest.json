@@ -1,10 +1,10 @@
 ﻿{
-  "name": "JotunnModStub",
-  "description": "",
-  "version_number": "0.0.1",
+  "name": "Monostar",
+  "description": "Toggle red vision on living non-player characters with F8.",
+  "version_number": "0.0.3",
   "website_url": "",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.2333",
-    "ValheimModding-Jotunn-2.26.1"
+    "ValheimModding-Jotunn-2.27.1"
   ]
 }
