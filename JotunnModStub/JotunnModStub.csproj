@@ -3,8 +3,8 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net48</TargetFramework>
-    <RootNamespace>Monostar</RootNamespace>
-    <AssemblyName>Monostar</AssemblyName>
+    <RootNamespace>OdinsVision</RootNamespace>
+    <AssemblyName>OdinsVision</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <LangVersion>10</LangVersion>

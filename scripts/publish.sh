@@ -2,7 +2,7 @@
 
 target="Debug"
 targetPath="JotunnModStub/bin/$target/net48"
-targetAssembly="JotunnModStub.dll"
+targetAssembly="OdinsVision.dll"
 valheimPath=""
 bepinexPath=""
 deployPath=""
@@ -46,6 +46,11 @@ fi
 name=$(echo "$targetAssembly" | sed 's/\.dll//')
 
 if [ "$target" = "Debug" ]; then
+    legacyPlug="$deployPath/Monostar"
+    if [ -d "$legacyPlug" ]; then
+        rm -f "$legacyPlug/Monostar.dll" "$legacyPlug/Monostar.pdb" "$legacyPlug/Monostar.dll.mdb"
+        rmdir "$legacyPlug" 2>/dev/null || true
+    fi
     plug="$deployPath/$name"
     echo "Copying $targetAssembly to $plug"
 
@@ -58,6 +63,8 @@ fi
 if [ "$target" = "Release" ]; then
     packagePath="$projectPath/Package"
     mkdir -p "$packagePath/plugins"
+    rm -f "$targetPath/Monostar.dll" "$targetPath/Monostar.pdb" "$targetPath/Monostar.dll.mdb" "$targetPath/Monostar.zip" "$projectPath/Monostar.zip"
+    rm -f "$packagePath/plugins/Monostar.dll"
     cp "$targetPath/$targetAssembly" "$packagePath/plugins/"
     cp "$projectPath/README.md" "$packagePath/"
 

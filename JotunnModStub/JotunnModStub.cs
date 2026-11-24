@@ -8,15 +8,15 @@ using Jotunn.Entities;
 using Jotunn.Managers;
 using UnityEngine;
 
-namespace Monostar
+namespace OdinsVision
 {
     [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
     [BepInDependency(Jotunn.Main.ModGuid)]
-    internal class Monostar : BaseUnityPlugin
+    internal class OdinsVision : BaseUnityPlugin
     {
-        public const string PluginGUID = "de.monostar.zerocodefx";
-        public const string PluginName = "Monostar";
-        public const string PluginVersion = "0.0.3";
+        public const string PluginGUID = "de.odinsvision.zerocodefx";
+        public const string PluginName = "OdinsVision";
+        public const string PluginVersion = "0.0.4";
         private const string ToggleVisionButton = "Monostar_ToggleVision";
 
         private ConfigEntry<KeyboardShortcut> ToggleVisionKey;
@@ -42,7 +42,7 @@ namespace Monostar
             });
 
             // Jotunn comes with its own Logger class to provide a consistent Log style for all mods using it
-            Jotunn.Logger.LogInfo("Monostar is Enabled");
+            Jotunn.Logger.LogInfo("OdinsVision is enabled");
 
             // To learn more about Jotunn's features, go to
             // https://valheim-modding.github.io/Jotunn/tutorials/overview.html
@@ -53,7 +53,7 @@ namespace Monostar
             var rawKeyPressed = Input.GetKeyDown(ToggleVisionKey.Value.MainKey) && !IsTextInputFocused();
             if (rawKeyPressed || IsToggleVisionPressed())
             {
-                Jotunn.Logger.LogInfo($"{ToggleVisionKey.Value.MainKey} pressed by Monostar.");
+                Jotunn.Logger.LogInfo($"{ToggleVisionKey.Value.MainKey} pressed by OdinsVision.");
                 IsVisionActive = !IsVisionActive;
                 if (IsVisionActive)
                 {
@@ -92,7 +92,7 @@ namespace Monostar
 
             if (characters == null)
             {
-                Jotunn.Logger.LogWarning("Monostar could not find the active character list.");
+                Jotunn.Logger.LogWarning("OdinsVision could not find the active character list.");
                 return;
             }
 

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Monostar
+namespace OdinsVision
 {
     internal static class ThermalMaterialManager
     {
@@ -43,7 +43,7 @@ namespace Monostar
                         {
                             visionMaterials[index] = new Material(originalMaterials[index])
                             {
-                                name = "Monostar_PredatorVision_Red"
+                                name = "OdinsVision_PredatorVision_Red"
                             };
                             ConfigureVisionMaterial(visionMaterials[index]);
                         }
